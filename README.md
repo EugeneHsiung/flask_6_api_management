@@ -19,9 +19,9 @@ brew install azure-functions-core-tools@4
 # if upgrading on a machine that has 2.x or 3.x installed:
 brew link --overwrite azure-functions-core-tools@4```
 
-3. Type in ```func init LocalFunctionProj --python -m V2``` to create a functions project in a folder named LocalFunctionProj
-4. Type in ```cd LocalFunctionProj``` to go to the project folder
-5. Open the file ```function_app.py``` and
+3. Type in `func init LocalFunctionProj --python -m V2` to create a functions project in a folder named LocalFunctionProj
+4. Type in `cd LocalFunctionProj` to go to the project folder
+5. Open the file `function_app.py` and
 
 type in:
 
