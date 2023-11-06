@@ -21,7 +21,9 @@ brew link --overwrite azure-functions-core-tools@4`
 
 3. Type in `func init LocalFunctionProj --python -m V2` to create a functions project in a folder named LocalFunctionProj
 4. Type in `cd LocalFunctionProj` to go to the project folder
-5. Open the file `function_app.py` and type in:
+5. Open the file `function_app.py` and
+
+type in:
 `import azure.functions as func
 
 app = func.FunctionApp()
