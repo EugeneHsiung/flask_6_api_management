@@ -24,6 +24,7 @@ brew link --overwrite azure-functions-core-tools@4```
 5. Open the file ```function_app.py``` and
 
 type in:
+
 ```
 import azure.functions as func
 
