@@ -1,3 +1,4 @@
+# Example 1 (class)
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)

@@ -1,55 +1,27 @@
+# Example 2
 from flask import Flask, request, jsonify
 from flasgger import Swagger
 
 app = Flask(__name__)
-Swagger(app)
+swagger = Swagger(app)
 
-@app.route('/hello', methods=['GET'])
-def hello_get():
+
+@app.route('/home', methods=['GET'])
+def home_get():
     """
-    This endpoint returns a greeting message.
+    This endpoint provides a name based on input
     ---
     parameters:
       - name: name
         in: query
         type: string
         required: false
-        default: World
+        default: Eugene
     responses:
       200:
-        description: A greeting message
+        description: Returns message that says "Hello name"
     """
-    name = request.args.get('name', 'World')
-    return f'Hello {name}!'
-
-@app.route('/hello', methods=['POST'])
-def hello_post():
-    """
-    This endpoint returns a greeting message based on the name provided in the JSON body.
-    ---
-    parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          id: data
-          required:
-            - name
-          properties:
-            name:
-              type: string
-              default: World
-    responses:
-      200:
-        description: A greeting message
-      400:
-        description: Invalid JSON
-    """
-    data = request.get_json()
-    if data is None:
-        return jsonify({'error': 'Invalid JSON'}), 400
-    
-    name = data.get('name', 'World')
+    name = request.args.get('name', 'Eugene')
     return jsonify({'message': f'Hello {name}!'})
 
 if __name__ == '__main__':
