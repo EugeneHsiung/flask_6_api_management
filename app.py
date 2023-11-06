@@ -10,10 +10,12 @@ def home_get():
     lastnameCapital = lastname.upper()
 
     response = {
-        "message": f'Hello {nameCapital}{lastnameCapital}!'
+        "message": f'Hello {nameCapital} {lastnameCapital}!'
     }
 
     return jsonify(response)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# type in: /home?name=John&lastname=Smith (example)
