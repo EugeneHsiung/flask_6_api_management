@@ -4,3 +4,11 @@
 Using the [templates](https://github.com/hantswilliams/HHA_504_2023/tree/main/WK6/code/flask) provided, I created flask examples named `app_basic.p` and `app_flasgger.py` inside this [folder](https://github.com/EugeneHsiung/flask_6_api_management/tree/main/examples.py). I combined both templates and created an `app.py` flask template for this assignment. By running this application, type in `python app.py` in the shell terminal. The output would be a json file. For example: replace everything after the .dev with `/home?name=John&lastname=Smith` and the output should result in `{
   "message": "Hello JOHN SMITH!"
 }`
+
+# Azure API deployment
+1. Install [homebrew](https://brew.sh/) with `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)".` However, I was unsuccessful in installing homebrew so I used this [guide](https://docs.brew.sh/Installation) unsupported method instead. Type in `mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew` or `git clone https://github.com/Homebrew/brew homebrew` then type in `eval "$(homebrew/bin/brew shellenv)"
+brew update --force --quiet
+chmod -R go-w "$(brew --prefix)/share/zsh"`
+
+2. 
+
