@@ -33,8 +33,7 @@ app = func.FunctionApp()
 @app.function_name(name="HttpExample")
 @app.route(route="hello")
 def test_function(req: func.HttpRequest) -> func.HttpResponse:
-    return func.HttpResponse("HttpExample function processed a request!")
-```
+    return func.HttpResponse("HttpExample function processed a request!")```
 
-6. n the local.settings.json file, update the `AzureWebJobsStorage` with `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`
+6. In the local.settings.json file, update the `AzureWebJobsStorage` with `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`
 
