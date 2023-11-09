@@ -5,7 +5,7 @@ Using the [templates](https://github.com/hantswilliams/HHA_504_2023/tree/main/WK
   "message": "Hello JOHN SMITH!"
 }`
 
-# Azure API deployment
+# Azure API deployment and Flassger 
 Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
 1. In order to install Azure CLI, type in `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
 2. Type in `az login --use-device-code` and follow instructructins by clicking the link provided and typing in the password provided/
@@ -18,4 +18,4 @@ Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cl
 9. In the terminal, cd into the `LocalFunctionProj` then type `func start`.
 10. Type `az functionapp create --resource-group <resource group name> --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <app name> --os-type linux --storage-account <storage account name>`. Replace with your resource group name, a chosen app name, and the storage account name created in Azure. This will create the API connection. 
 11. Type: `func azure functionapp publish <app name>` and replace the app name with the chosen app name from the prior step.
-
+12. Images of the API and flassger can be seen in the screenshots [folder](https://github.com/EugeneHsiung/flask_6_api_management/tree/main/Screenshots)
