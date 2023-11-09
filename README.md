@@ -14,7 +14,8 @@ Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cl
 5. Open `local.settings.json` folder and verify that `AzureWebJobsFeatureFlags` is equal to `EnableWorkerIndexing`
 6. Go to Azure and search storage. Create a new storage. Access the storage and go to `Acess keys`. Copy the connection string under any of the keys.
 7. Go back to the folder in the shell enviorment and find `AzureWebJobsStorage`. Paste the connection string after.
-8. In the terminal, cd into the `LocalFunctionProj` then type `func start`.
-9. Type `az functionapp create --resource-group <resource group name> --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <app name> --os-type linux --storage-account <storage account name>`. Replace with your resource group name, a chosen app name, and the storage account name created in Azure. This will create the API connection. 
-10. Type: `func azure functionapp publish <app name>` and replace the app name with the chosen app name from the prior step.
-11. 
+8. In your `function_app.py` under the `LocalFunctionProj` replace contents with the chosen code and reformat it following the guide. For example, for mine I inserted this [code](https://github.com/EugeneHsiung/flask_6_api_management/blob/main/LocalFunctionProj/function_app.py) 
+9. In the terminal, cd into the `LocalFunctionProj` then type `func start`.
+10. Type `az functionapp create --resource-group <resource group name> --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <app name> --os-type linux --storage-account <storage account name>`. Replace with your resource group name, a chosen app name, and the storage account name created in Azure. This will create the API connection. 
+11. Type: `func azure functionapp publish <app name>` and replace the app name with the chosen app name from the prior step.
+
