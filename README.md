@@ -6,7 +6,7 @@ Using the [templates](https://github.com/hantswilliams/HHA_504_2023/tree/main/WK
 }`
 
 # Azure API deployment and Flassger 
-Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
+Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt) and this [guide](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=linux%2Cbash%2Cazure-cli&pivots=python-mode-decorators)
 1. In order to install Azure CLI, type in `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
 2. Type in `az login --use-device-code` and follow instructructins by clicking the link provided and typing in the password provided/
 3. Type in `sudo apt-get install azure-functions-core-tools-4` to install Azure Functions Core Tools for Linux
