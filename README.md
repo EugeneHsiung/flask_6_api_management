@@ -6,34 +6,15 @@ Using the [templates](https://github.com/hantswilliams/HHA_504_2023/tree/main/WK
 }`
 
 # Azure API deployment
-1. Install [homebrew](https://brew.sh/) with ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)".``` However, I was unsuccessful in installing homebrew so I used this [guide](https://docs.brew.sh/Installation) unsupported method instead. Type in ```mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew` or `git clone https://github.com/Homebrew/brew homebrew``` then type in ```eval "$(homebrew/bin/brew shellenv)"
-brew update --force --quiet
-chmod -R go-w "$(brew --prefix)/share/zsh"```
-
-2. Follow [python tutorial for HTTP function](https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=macos%2Cbash%2Cazure-cli&pivots=python-mode-decorators).
-
-To install the Core Tools package, type in:
-
-```brew tap azure/functions
-brew install azure-functions-core-tools@4
-# if upgrading on a machine that has 2.x or 3.x installed:
-brew link --overwrite azure-functions-core-tools@4```
-
-3. Type in `func init LocalFunctionProj --python -m V2` to create a functions project in a folder named LocalFunctionProj
-4. Type in `cd LocalFunctionProj` to go to the project folder
-5. Open the file `function_app.py` and
-
-type in:
-```
-import azure.functions as func
-
-app = func.FunctionApp()
-
-@app.function_name(name="HttpExample")
-@app.route(route="hello")
-def test_function(req: func.HttpRequest) -> func.HttpResponse:
-    return func.HttpResponse("HttpExample function processed a request!")
-```
-
-6. In the local.settings.json file, update the `AzureWebJobsStorage` with `"AzureWebJobsStorage": "UseDevelopmentStorage=true"`
-
+Follow this [guide](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
+1. In order to install Azure CLI, type in `curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash`
+2. Type in `az login --use-device-code` and follow instructructins by clicking the link provided and typing in the password provided/
+3. Type in `sudo apt-get install azure-functions-core-tools-4` to install Azure Functions Core Tools for Linux
+4. Type `func init LocalFunctionProj --python -m V2` to create Azure Functions project folder
+5. Open `local.settings.json` folder and verify that `AzureWebJobsFeatureFlags` is equal to `EnableWorkerIndexing`
+6. Go to Azure and search storage. Create a new storage. Access the storage and go to `Acess keys`. Copy the connection string under any of the keys.
+7. Go back to the folder in the shell enviorment and find `AzureWebJobsStorage`. Paste the connection string after.
+8. In the terminal, cd into the `LocalFunctionProj` then type `func start`.
+9. Type `az functionapp create --resource-group <resource group name> --consumption-plan-location eastus --runtime python --runtime-version 3.9 --functions-version 4 --name <app name> --os-type linux --storage-account <storage account name>`. Replace with your resource group name, a chosen app name, and the storage account name created in Azure. This will create the API connection. 
+10. Type: `func azure functionapp publish <app name>` and replace the app name with the chosen app name from the prior step.
+11. 
