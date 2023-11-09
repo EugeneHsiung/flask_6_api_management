@@ -22,4 +22,3 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
         )
 # type in: /api/home?name=John&lastname=Smith (example)
 # https://7071-cs-340668953872-default.cs-us-east1-vpcf.cloudshell.dev/api/home?
-#
