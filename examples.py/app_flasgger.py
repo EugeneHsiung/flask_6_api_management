@@ -16,7 +16,7 @@ def home_get():
         in: query
         type: string
         required: false
-        default: Eugene
+        default: EugeneH
     responses:
       200:
         description: Returns message that says "Hello name"
@@ -25,4 +25,8 @@ def home_get():
     return jsonify({'message': f'Hello {name}!'})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) 
+
+# https://7071-cs-340668953872-default.cs-us-east1-vpcf.cloudshell.dev/api/home? 
+
+# use app_flasgger for assigment
